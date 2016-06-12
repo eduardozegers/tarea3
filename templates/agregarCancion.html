@@ -1,0 +1,30 @@
+$def with(error=None,data=dict())
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			$if error=="error":
+				<div class="alert alert-danger">
+						<strong>Error:</strong> Debe ingresar un artista o una canción correcta.
+				</div>
+		  	<form role="form" method="post">
+				<div class="row collapse">
+					<label for="cancion" class="col-sm-2 control-label">Nombre Canción</label>
+					<div class="small-9 columns">
+						<input type="text" name="cancion" id="pistaCancion" placeholder="Ingrese el nombre de la canción" value="$:data['cancion']">
+					</div>
+				</div>
+		        <div class="row collapse">
+					<label for="artista" class="col-sm-2 control-label">Nombre Artista</label>
+					<div class="small-9 columns">
+						<input type="text" name="artista" id="nombreArtista" placeholder="Ingrese el nombre del artista" value="$:data['artista']">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">Ingresar canción nueva</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

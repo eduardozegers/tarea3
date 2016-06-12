@@ -1,0 +1,43 @@
+$def with(cancionesEncontradas)
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			<div class="container">
+				<center><h2>Canciones Encontradas</h2></center>
+				<center><p><b>Canciones disponibles dentro de la libreria de Pypotify</b></p> </center>   
+				<form role="form" method="post">
+					<div class="row collapse">
+						<label for="cancion" class="col-sm-2 control-label">Nombre De la Lista</label>
+						<div class="small-9 columns">
+							<input type="text" name="nombreLista" placeholder="Ingrese el nombre de la lista.">
+						</div>
+					</div>     
+					<table class="table table-hover" align="center">
+				    	<thead>
+				      	<tr>
+							<th>Seleccionar</th>
+					        <th>Nombre</th>
+					        <th>Artista</th>
+					        <th>ID</th>
+				    	</tr>
+				    	</thead>
+				    <tbody>
+				    $for linea in cancionesEncontradas:
+					    <tr>
+					        <td align="center"> <input type="checkbox" name="$linea.strip().split('<SEP>')[1]" value="$linea.strip().split('<SEP>')[3]"></td>
+					        <td align="center"> $linea.strip().split('<SEP>')[3]</td>
+					        <td align="center"> $linea.strip().split('<SEP>')[2]</td>
+					        <td align="center"> $linea.strip().split('<SEP>')[1]</td>
+						</tr>
+				    </tbody>
+					<div class="small-3 columns">
+					<button type="submit" class="button postfix">Crea Lista</button>
+					</div>
+				</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

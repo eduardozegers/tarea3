@@ -1,0 +1,66 @@
+$def with (page=None)
+<html>
+<head>
+    <title>Pypotify</title>
+    <link rel="stylesheet" href="/static/css/foundation.css">
+    <link rel="stylesheet" href="/static/css/foundation-icons.css">
+</head>
+
+<body>
+
+<div class="row" style="margin-top: 64px">
+    <div class="large-12 columns">
+        <nav class="top-bar" data-topbar role="navigation">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="/">Pypotify</a></h1>
+            </li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul class="left">
+		$if page=="index":
+                    <li class="active">
+                $else:
+                    <li>
+		<a href="/"><i class="fi-home"></i> Inicio</a></li>
+              $if page=="canciones":
+                    <li class="active">
+                $else:
+                    <li>
+    <a href="/canciones/"><i class="fi-music"></i> Canciones</a></li>
+              $if page=="verLista":
+                    <li class="active">
+                $else:
+                    <li>
+    <a href="/verListas/"><i class="fi-eye"></i> Playlists</a></li>
+              $if page=="cancionNueva":
+                    <li class="active">
+                $else:
+                    <li>
+    <a href="/cancionNueva/"><i class="fi-upload"></i> Agregar Cancion</a></li>
+              $if page=="lista":
+                    <li class="active">
+                $else:
+                    <li>
+    <a href="/buscar/"><i class="fi-list"></i> Crear Lista</a></li>
+              $if page=="borrarCancion":
+                    <li class="active">
+                $else:
+                    <li>
+    <a href="/borrarCancion/"><i class="fi-trash"></i> Borrar Canciones</a></li>
+              $if page=="borrarListas":
+                    <li class="active">
+                $else:
+                    <li>
+    <a href="/borrarListas/"><i class="fi-trash"></i> Borrar Listas</a></li>
+            </ul>
+          </section>
+        </nav>
+    </div>
+</div>
+
+
+
+
+

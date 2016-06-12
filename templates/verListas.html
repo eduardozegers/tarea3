@@ -1,0 +1,53 @@
+$def with(data=dict())
+<div class="row">
+<div class="large-12 columns">
+<div class="panel">
+<div class="container">
+  <center><h2>Lista de canciones</h2></center>
+  <center><p><b>Listas de canciones disponibles dentro de la libreria de Pypotify.</b></p> </center>         
+  <table class="table table-hover" align="center">
+    <tbody>
+      $for lista,canciones in data.items(): 
+      <tr>
+        <td align="center">
+        <table class="table table-hover" align="left" width="100%">
+            <thead>
+              <tr>
+                <th>Nombre Lista: $lista</th>
+              </tr>
+            </thead>
+            <tbody>
+                $for cancion in canciones:
+                <tr>
+                  <td align="center">
+
+                    <table class="table table-hover" align="left" width="100%">
+                      <thead>
+                        <tr>
+                          <th>Cancion</th>
+                          <th>Artista</th>
+                          <th>ID</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                            <td align="center">$cancion[0]</td>
+                            <td align="center">$cancion[1]</td>
+                            <td align="center">$cancion[2]</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+        </td>
+     </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

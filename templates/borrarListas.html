@@ -1,0 +1,37 @@
+$def with(error=None,data=dict())
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			<div class="container">
+				<center><h2>Playlist a Borrar</h2></center>
+				<center><p><b>Seleccione una o más playlist que quiera borrar.</b></p> </center>
+				<form role="form" method="post">   
+					<table class="table table-hover" align="center">
+						<thead>
+							<tr>
+								<th>Seleccionar</th>
+								<th>Nombre Playlist</th>
+							</tr>
+						</thead>
+						<tbody>
+							$for nombre,canciones in data.items():
+							<tr>
+								<td align="center"> <input type="checkbox" name="$nombre" value="$canciones"></td>
+								<td align="center">$nombre</td>
+							</tr>
+						</tbody>
+						<div class="small-3 columns">
+							<button type="submit" class="button postfix">Borrar Playlist</button>
+						</div>
+					</table>
+				</form>
+							$if error=="error":
+							<div class="alert alert-danger">
+								<strong>Error:</strong> Debe seleccionar una o más listas.
+							</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

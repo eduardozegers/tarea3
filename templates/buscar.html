@@ -1,0 +1,30 @@
+$def with(estado=True,error=None)
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="panel">
+				<center><h2>Crear una lista</h2></center>
+				<center><p><b>Busca tu artista favorito o cancion favorita para empezar la lista.</b></p> </center>
+				$if error=="error1":
+					<div class="alert alert-danger">
+						<strong>Error:</strong> Debes ingresar una palabra.
+					</div>
+					<br>
+				$elif error=="error2":
+					<div class="alert alert-danger">
+						<strong>No existen</strong> resultados encontrados.
+					</div>
+					<br>
+				<form role="form" method="post">
+					<h4>Palabra Clave:</h4>
+					<div class="row collapse">
+						<div class="small-9 columns">
+							<input type="text" name="palabraClave" placeholder="Ingrese nombre del artista, de las canciones o un ID, separados por una ','">
+						</div>
+						<div class="small-3 columns">
+							<button type="submit" class="button postfix">Buscar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
